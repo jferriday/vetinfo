@@ -1,0 +1,56 @@
+{
+  "pets": [
+    {
+      "id": 1,
+      "name": "Gustav",
+      "species": "dog",
+      "breed": "pug",
+      "age": 7,
+      "weight": 7,
+      "medication": [
+        {
+          "id": 1,
+          "name": "Painkiller",
+          "doseInMg": 200,
+          "doseFrequency": "Daily",
+          "renewal": "2021-12-01"
+        }
+      ]
+    },
+    {
+      "name": "Darcy",
+      "species": "dog",
+      "breed": "pug",
+      "age": 7,
+      "weight": 7,
+      "medication": [
+        {
+          "id": 1,
+          "name": "Painkiller",
+          "doseInMg": 200,
+          "doseFrequency": "Daily",
+          "renewal": "2021-12-01"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "Bessie",
+      "species": "dog",
+      "breed": "Collie",
+      "age": 3,
+      "weight": 14,
+      "medication": [],
+      "id": 3
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "petId": 1,
+      "date": "2021-11-03",
+      "subject": "Check up",
+      "notes": "Check that Gustav is doing OK"
+    }
+  ]
+}
