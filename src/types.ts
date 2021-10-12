@@ -28,6 +28,7 @@ export interface Medication {
 export interface Appointment {
     id: number;
     petId: number;
+    petName: string;
     date: string;
     subject: string;
     notes: string;

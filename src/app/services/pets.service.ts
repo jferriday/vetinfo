@@ -12,14 +12,14 @@ import { NewPet, Pet } from './../../types';
 })
 export class PetsService {
   endpoint = 'http://localhost:3000/pets';
-  const httpOptions = {
+  httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
     })
   }
 
   // Cache of pets and their info to provide to the UI
-  petsArray: Pet[] = [];
+  petList: Pet[] = [];
   selectedPet: Pet;
 
 
@@ -27,6 +27,7 @@ export class PetsService {
   // functions to fetch information from the server
   getAllPets(): Observable<Pet[]> {
     const petsArray = this.http.get<Pet[]>(this.endpoint);
+    petsArray.subscribe(data => this.petList = data);
     return petsArray;
   }
 
@@ -44,14 +45,14 @@ export class PetsService {
     return this.http.put<Pet>(`${this.endpoint}/${petObject.id}`, JSON.stringify(petObject), this.httpOptions)
   }
 
-  // functions to update data inside the pets service
-  refreshAllPets(): void {
-    this.getAllPets().subscribe(pets => this.petsArray = pets);
-  }
-  updateSelectedPet(id): void {
-    this.getPetById(id).subscribe(pet => this.selectedPet = pet);
+ // takes in a pet object and updates the shared selected pet state
+  updateSelectedPet(pet: Pet): void {
+    this.selectedPet = pet;
   }
 
+
+
+  // Move these into components
   // Creates a new pet using object passed in
   saveNewPet(petObject: NewPet): Pet {
     let newPetObject: Pet;

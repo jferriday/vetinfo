@@ -48,6 +48,7 @@
     {
       "id": 1,
       "petId": 1,
+      "petName": "Gustav",
       "date": "2021-11-03",
       "subject": "Check up",
       "notes": "Check that Gustav is doing OK"

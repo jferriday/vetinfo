@@ -1,0 +1,12 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr .5fr 1fr;
+
+    .pet-list {
+        grid-column: 1 / 2;
+    }
+
+    .pet-overview {
+        grid-column: 3 / 4;
+    }
+}
