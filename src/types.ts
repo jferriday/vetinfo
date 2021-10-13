@@ -12,8 +12,8 @@ export interface NewPet {
     name: string;
     species: string;
     breed: string | null;
-    age: number;
-    weight: number;
+    age: number | null;
+    weight: number | null;
     medication: Medication[];    
 }
 

@@ -22,7 +22,12 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+import { EditPetDialogComponent } from './pets/edit-pet-dialog/edit-pet-dialog.component';
+import {MatInputModule} from '@angular/material/input';
+import {FormsModule} from '@angular/forms'
 
 
 
@@ -34,7 +39,8 @@ import {MatFormFieldModule} from '@angular/material/form-field'
     PetContainerComponent,
     AppointmentListComponent,
     AppointmentsContainerComponent,
-    AppointmentDetailComponent
+    AppointmentDetailComponent,
+    EditPetDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,15 +51,19 @@ import {MatFormFieldModule} from '@angular/material/form-field'
     ]),
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatListModule,
     MatToolbarModule,
     MatButtonModule,
     MatCardModule,
     MatGridListModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatDialogModule,
+    MatInputModule
 
   ],
-  providers: [PetsService, AppointmentsService],
+  providers: [PetsService, AppointmentsService, MatDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

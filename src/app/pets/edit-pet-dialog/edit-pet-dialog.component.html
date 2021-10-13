@@ -1,0 +1,34 @@
+<mat-card>
+  <h2 mat-dialog-title>Add Pet</h2>
+  <form #petForm="ngForm"
+  (ngSubmit)="onSubmit()">
+          <div class="form-container">
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput required name="name" [(ngModel)]="petData.name" />
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Species</mat-label>
+      <input matInput required name="species" [(ngModel)]="petData.species" />
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Breed (if applicable)</mat-label>
+      <input matInput name="breed" [(ngModel)]="petData.breed" />
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Age (years)</mat-label>
+      <input matInput required type="number" name="age" [(ngModel)]="petData.age" />
+    </mat-form-field>
+    <mat-form-field color="accent" appearance="fill">
+      <mat-label>Weight (kg)</mat-label>
+      <input matInput required type="number" name="weight" [(ngModel)]="petData.weight" />
+    </mat-form-field>
+</div>
+<mat-dialog-actions>
+<button mat-button mat-dialog-close>Close</button>
+<button mat-raised-button type="submit" color="accent" [disabled]="!petForm.form.valid">
+    Save
+</button>
+</mat-dialog-actions>
+</form>
+</mat-card>

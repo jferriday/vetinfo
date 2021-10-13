@@ -10,6 +10,7 @@ import { Pet } from 'src/types';
 export class PetListComponent implements OnInit {
   @Input() petsArray: Pet[];
   @Output() selectedPet = new EventEmitter();
+  @Output() addPet = new EventEmitter();
 
   constructor(
     ) {}
@@ -20,5 +21,9 @@ export class PetListComponent implements OnInit {
 
    onSelect(id) {
      this.selectedPet.emit(id);
+   }
+
+   addPetClicked() {
+     this.addPet.emit();
    }
 }

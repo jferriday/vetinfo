@@ -1,5 +1,8 @@
 <mat-card>
-    <mat-card-title>Pets</mat-card-title>
+    <mat-card-title>Pets <button mat-mini-fab (click)="addPetClicked()">
+        <mat-icon class="mat-18">add</mat-icon>
+    </button></mat-card-title>
+    
     <mat-divider></mat-divider>
 <mat-selection-list [multiple]="false">
     <mat-list-item>

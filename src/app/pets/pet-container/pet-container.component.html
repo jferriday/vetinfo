@@ -1,10 +1,13 @@
 <div class="container">
-<app-pet-list class="pet-list"
-[petsArray]="petsArray"
-(selectedPet)="selectPet($event)"
-></app-pet-list>
-<app-pet-overview class="pet-overview"
-[selectedPet]="selectedPet"
-(clearSelection)="clearSelectedPet()"
-></app-pet-overview>
+  <app-pet-list
+    class="pet-list"
+    [petsArray]="petsArray"
+    (selectedPet)="selectPet($event)"
+    (addPet)="openAddPetDialog()"
+  ></app-pet-list>
+  <app-pet-overview
+    class="pet-overview"
+    [selectedPet]="selectedPet"
+    (clearSelection)="clearSelectedPet()"
+  ></app-pet-overview>
 </div>

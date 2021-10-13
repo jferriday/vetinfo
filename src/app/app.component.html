@@ -1,9 +1,9 @@
 <mat-toolbar class="topnav">
     <span>{{title}}</span>
-    <nav>
-        <a mat-button-stroked routerLink="" color="primary">Home</a>
-        <a mat-button-stroked routerLink="/appointments" color="accent">Appointments</a>
-    </nav>
+    <div>
+        <button mat-raised-button routerLink="" color="primary">Home</button>
+        <button mat-raised-button routerLink="/appointments" color="primary">Appointments</button>
+    </div>
 </mat-toolbar>
 <router-outlet></router-outlet>
 

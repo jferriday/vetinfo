@@ -35,13 +35,31 @@
       "id": 2
     },
     {
-      "name": "Bessie",
-      "species": "dog",
-      "breed": "Collie",
-      "age": 3,
-      "weight": 14,
+      "name": "Jess",
+      "species": "Dog",
+      "breed": "BEagle",
+      "age": 13,
+      "weight": 12,
       "medication": [],
       "id": 3
+    },
+    {
+      "name": "Billy",
+      "species": "Cat",
+      "breed": "",
+      "age": 18,
+      "weight": 8,
+      "medication": [],
+      "id": 4
+    },
+    {
+      "name": "Muffin",
+      "species": "Cat",
+      "breed": "",
+      "age": 22,
+      "weight": 7,
+      "medication": [],
+      "id": 5
     }
   ],
   "appointments": [

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PetsService } from 'src/app/services/pets.service';
 import { Pet } from 'src/types';
+import { MatDialog } from '@angular/material/dialog';
+import { EditPetDialogComponent } from '../edit-pet-dialog/edit-pet-dialog.component';
+
 
 @Component({
   selector: 'app-pet-container',
@@ -11,7 +14,10 @@ export class PetContainerComponent implements OnInit {
   petsArray: Pet[];
   selectedPet: Pet | null = null;
 
-  constructor(private petsService: PetsService) { }
+  constructor(
+    private petsService: PetsService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
     this.refreshAllPets();
@@ -30,6 +36,15 @@ export class PetContainerComponent implements OnInit {
 
   clearSelectedPet(): void {
     this.selectedPet = null;
+  }
+
+  openAddPetDialog(): void {
+    const addPetDialogRef = this.dialog.open(EditPetDialogComponent).componentInstance.onSave.subscribe(() => this.refreshAllPets());
+    //.afterClosed().subscribe(result => this.refreshAllPets());
+  }
+  
+  closeAddPetDialog():void {
+    const addPetDialogRef = this.dialog.closeAll();
   }
 
 }
