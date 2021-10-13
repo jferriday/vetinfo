@@ -1,0 +1,9 @@
+.appts-section {
+    width: 100%;
+    margin: 5em auto;
+}
+.appt-list-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointment } from 'src/types';
 
@@ -8,16 +8,17 @@ import { Appointment } from 'src/types';
   styleUrls: ['./appointment-list.component.scss']
 })
 export class AppointmentListComponent implements OnInit {
-  apptsArray: Appointment[] = [];
+  @Input() apptsArray: Appointment[];
+  @Output() selectAppt = new EventEmitter()
+  
   constructor(private apptService: AppointmentsService) { }
 
   ngOnInit(): void {
-    this.refreshAppointments();
   }
 
-  refreshAppointments(){
-    this.apptService.getAll()
-    .subscribe(data => this.apptsArray = data);
+  onSelect(appt) {
+    this.selectAppt.emit(appt);
   }
 
+ 
 }

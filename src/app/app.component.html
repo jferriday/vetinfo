@@ -1,3 +1,9 @@
-<h1>{{title}}</h1>
-<app-pet-container></app-pet-container>
-<app-appointment-list></app-appointment-list>
+<mat-toolbar class="topnav">
+    <span>{{title}}</span>
+    <nav>
+        <a mat-button-stroked routerLink="" color="primary">Home</a>
+        <a mat-button-stroked routerLink="/appointments" color="accent">Appointments</a>
+    </nav>
+</mat-toolbar>
+<router-outlet></router-outlet>
+

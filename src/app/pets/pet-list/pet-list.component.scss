@@ -1,29 +1,8 @@
-ul {
-    height: 70vh;
-    border: black 1px solid;
-    width: 35em;
-}
-li {
-    height: 2em;
-  list-style: none;
+
+.list-entry {
+
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  width: 30em;
-  cursor: pointer;
-  border: black 1px solid;
-
- 
-  h4,
-  p {
-    margin-right: 4em;
-  }
-
-  div {
-    width: 10em;
-  }
-}
-
-li:hover {
-    background-color: rgb(204, 203, 200);
+  width: 100%; 
 }

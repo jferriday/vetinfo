@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Appointment Details</mat-card-title>
+  <mat-divider></mat-divider>
+  <mat-card-content>
+  <mat-list>
+    <mat-list-item>Date: {{appt.date | date}}</mat-list-item>
+      <mat-list-item>Pet: {{appt.petName | titlecase}}</mat-list-item>
+      <mat-list-item>Subject: {{appt.subject | titlecase}}</mat-list-item>
+      <mat-list-item>{{appt.petName | titlecase}}</mat-list-item>
+      <mat-list-item>
+          Notes:
+          {{appt.notes}}</mat-list-item>
+  </mat-list>
+  
+</mat-card-content>
+  
+
+
+</mat-card>

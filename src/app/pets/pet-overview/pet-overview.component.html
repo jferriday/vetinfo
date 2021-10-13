@@ -1,22 +1,26 @@
-<h2>Details</h2>
+<mat-card>
+<mat-card-title>Details</mat-card-title>
+<mat-divider></mat-divider>
 <div class="overview-container">
   <div *ngIf="selectedPet; else noSelection">
     <h3>Name: {{ selectedPet.name }}</h3>
     <p>Species: {{ selectedPet.species | titlecase}}</p>
     <p>Breed: {{ selectedPet.breed | titlecase}}</p>
     <p>Age: {{ selectedPet.age }} years</p>
-    <p>Weigth (kg): {{ selectedPet.weight }}</p>
+    <p>Weight (kg): {{ selectedPet.weight }}</p>
+    <mat-divider></mat-divider>
     <h4>Medication:</h4>
-    <ul>
-        <li *ngFor="let med of selectedPet.medication">
-            <p>Name:{{med.name}}</p>
-            <p>Dose(mg): {{med.doseInMg}}</p>
-            <p>Dose frequency: {{med.doseFrequency}}</p>
-        </li>
-    </ul>
+    <mat-list>
+        <mat-list-item *ngFor="let med of selectedPet.medication">
+            <h5 matLine>Name:{{med.name}}</h5>
+            <p matLine>Dose(mg): {{med.doseInMg}}</p>
+            <p matLine>Dose frequency: {{med.doseFrequency}}</p>
+        </mat-list-item>
+      </mat-list>
     <button>Details</button>
   </div>
   <ng-template #noSelection>
-      <p>Select a pet</p>
+      <mat-card-subtitle>Select a pet to view details.</mat-card-subtitle>
   </ng-template>
 </div>
+</mat-card>

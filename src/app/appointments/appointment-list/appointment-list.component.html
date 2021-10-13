@@ -1,7 +1,16 @@
-<ul>
-    <li *ngFor="let appt of apptsArray">
-        <p>{{appt.petName}}</p>
-        <p>{{appt.date | date}}</p>
-        <p>{{appt.subject}}</p>
-    </li>
-</ul>
+
+<mat-card>
+  <mat-card-title>Appointments</mat-card-title>
+  <mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let appt of apptsArray"
+    (click)="onSelect(appt)">
+      <div class="appt-list-item" >
+        <div>{{ appt.date | date }}</div>
+        <div>{{ appt.petName }}</div>
+        <div>{{ appt.subject }}</div>
+      </div>
+      <mat-divider></mat-divider>
+    </mat-list-option>
+  </mat-selection-list>
+</mat-card>
+

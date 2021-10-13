@@ -1,11 +1,22 @@
-<h2>Pets</h2>
-<ul>
-    <li *ngFor="let pet of petsArray" (click)="onSelect(pet.id)"
-    class="petlist-entry">
+<mat-card>
+    <mat-card-title>Pets</mat-card-title>
+    <mat-divider></mat-divider>
+<mat-selection-list [multiple]="false">
+    <mat-list-item>
+        <div class="list-entry">
+            <div>Name</div>
+            <div>Species</div>
+            <div>Breed</div>
+        </div>
+    </mat-list-item>
+    <mat-list-option *ngFor="let pet of petsArray" (click)="onSelect(pet.id)">
+        <div class="list-entry">
             <div>
                 <strong>{{pet.name}}</strong>
             </div>
             <div>{{pet.species | titlecase }}</div>
             <div>{{pet.breed | titlecase}}</div>
-        </li>
-</ul>
+        </div>
+        </mat-list-option>
+</mat-selection-list>
+</mat-card>

@@ -1,0 +1,13 @@
+.appointments-grid {
+    display: grid;
+    grid-template-columns: 1fr .25fr 1fr;
+    margin: 5em 10%;
+
+    .appts-list {
+        grid-column: 1/2;
+    }
+
+    .appts-detail {
+        grid-column: 3/4;
+    }
+}
