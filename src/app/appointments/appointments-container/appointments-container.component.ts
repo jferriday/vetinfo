@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentsService } from 'src/app/services/appointments.service';
 import { Appointment } from 'src/types';
+import {MatDialog} from '@angular/material/dialog';
+import { NewAppointmentDialogComponent } from '../new-appointment-dialog/new-appointment-dialog.component';
 
 @Component({
   selector: 'app-appointments-container',
@@ -11,7 +13,8 @@ export class AppointmentsContainerComponent implements OnInit {
   apptsArray: Appointment[] = [];
   selectedAppointment: Appointment | null;
   constructor(
-    private apptService: AppointmentsService
+    private apptService: AppointmentsService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -25,5 +28,9 @@ export class AppointmentsContainerComponent implements OnInit {
   updateSelectedAppt(appt) {
     console.log(`recieved ${appt}`)
     this.selectedAppointment = appt;
+  }
+
+  openAddApptDialog(): void {
+    const addApptDialog = this.dialog.open(NewAppointmentDialogComponent);
   }
 }

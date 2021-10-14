@@ -33,3 +33,11 @@ export interface Appointment {
     subject: string;
     notes: string;
 }
+
+export interface NewAppointment {
+    petId: number | null;
+    petName: string | null;
+    date: string | null;
+    subject: string | null;
+    notes: string | null;
+}

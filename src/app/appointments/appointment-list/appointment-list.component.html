@@ -1,6 +1,10 @@
 
 <mat-card>
-  <mat-card-title>Appointments</mat-card-title>
+  <mat-card-title>Appointments
+    <button mat-mini-fab (click)="addApptClicked()">
+      <mat-icon class="mat-18">add</mat-icon>
+    </button>
+  </mat-card-title>
   <mat-selection-list [multiple]="false">
     <mat-list-option *ngFor="let appt of apptsArray"
     (click)="onSelect(appt)">

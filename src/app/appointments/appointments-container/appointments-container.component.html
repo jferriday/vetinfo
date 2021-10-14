@@ -1,7 +1,8 @@
 <section class="appointments-grid">
     <app-appointment-list class="appts-list"
     [apptsArray]="apptsArray"
-    (selectAppt)="updateSelectedAppt($event)"></app-appointment-list>
+    (selectAppt)="updateSelectedAppt($event)"
+    (addAppt)="openAddApptDialog()"></app-appointment-list>
     <app-appointment-detail class="appts-detail"
     [appt]="selectedAppointment"></app-appointment-detail>
 </section>

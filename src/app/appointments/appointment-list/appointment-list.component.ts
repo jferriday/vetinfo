@@ -10,6 +10,7 @@ import { Appointment } from 'src/types';
 export class AppointmentListComponent implements OnInit {
   @Input() apptsArray: Appointment[];
   @Output() selectAppt = new EventEmitter()
+  @Output() addAppt = new EventEmitter()
   
   constructor(private apptService: AppointmentsService) { }
 
@@ -20,5 +21,8 @@ export class AppointmentListComponent implements OnInit {
     this.selectAppt.emit(appt);
   }
 
+  addApptClicked(): void {
+    this.addAppt.emit();
+  }
  
 }

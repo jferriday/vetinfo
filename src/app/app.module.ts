@@ -27,8 +27,11 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule, MatDialog} from '@angular/material/dialog';
 import { EditPetDialogComponent } from './pets/edit-pet-dialog/edit-pet-dialog.component';
 import {MatInputModule} from '@angular/material/input';
-import {FormsModule} from '@angular/forms'
-
+import {FormsModule} from '@angular/forms';
+import { NewAppointmentDialogComponent } from './appointments/new-appointment-dialog/new-appointment-dialog.component'
+import {MatDatepickerModule,} from '@angular/material/datepicker';
+import {MatMomentDateModule} from '@angular/material-moment-adapter'
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -40,7 +43,8 @@ import {FormsModule} from '@angular/forms'
     AppointmentListComponent,
     AppointmentsContainerComponent,
     AppointmentDetailComponent,
-    EditPetDialogComponent
+    EditPetDialogComponent,
+    NewAppointmentDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +64,10 @@ import {FormsModule} from '@angular/forms'
     MatFormFieldModule,
     MatIconModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
+    MatSelectModule
 
   ],
   providers: [PetsService, AppointmentsService, MatDialog],

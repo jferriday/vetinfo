@@ -1,0 +1,33 @@
+<mat-card>
+    <h2 mat-dialog-title>New Appointment</h2>
+  <form #apptForm="ngForm">
+    <div class="form-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Date</mat-label>
+            <input  name="date" matInput required [matDatepicker]="apptDatepicker" [(ngModel)]="apptData.date">
+            <mat-datepicker-toggle matSuffix [for]="apptDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #apptDatepicker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Pet</mat-label>
+            <mat-select [(ngModel)]="selectedPet" name="pet" (selectionChange)="updateSelectedPet()">
+                <mat-option *ngFor="let pet of petsList" [value]="pet">
+                    ID: {{pet.id}} - {{pet.name}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field color="accent" appearance="fill">
+            <mat-label>Subject</mat-label>
+            <input matInput name="subject" matInput required [(ngModel)]="apptData.subject" />
+        </mat-form-field>
+        <mat-form-field color="accent" appearance="fill">
+            <mat-label>Notes</mat-label>
+            <textarea matInput name="notes" [(ngModel)]="apptData.notes"></textarea>
+        </mat-form-field>
+    </div>
+    <mat-dialog-actions>
+        <button mat-button>Close</button>
+        <button mat-raised-button color="accent" (click)="onSave()">Save</button>
+    </mat-dialog-actions>
+  </form>
+</mat-card>
